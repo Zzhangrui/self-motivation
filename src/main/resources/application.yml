@@ -1,0 +1,14 @@
+server:
+  port: 8084
+  servlet:
+    context-path: /self-motivation
+spring:
+  datasource:
+    driver-class-name:  com.mysql.jdbc.Driver
+    url: jdbc:mysql://47.98.152.163:3306/cms?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: 1qaz@WSX
+mybatis:
+  type-aliases-package: com.yangq.selfmotivation.dao.po
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:/mapper/*.xml
