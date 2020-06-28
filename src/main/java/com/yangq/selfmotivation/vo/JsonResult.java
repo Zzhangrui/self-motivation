@@ -84,6 +84,12 @@ public class JsonResult {
         this.success = false;
         this.message = message;
     }
+
+    public static JsonResult success(Object data){
+        JsonResult jsonResult = new JsonResult(JsonResultEnum.SUCCESS,true);
+        jsonResult.setData(data);
+        return jsonResult;
+    }
     static{
         SUCCESS = new JsonResult(JsonResultEnum.SUCCESS,true);
         FAIL = new JsonResult(JsonResultEnum.FAIL,false);

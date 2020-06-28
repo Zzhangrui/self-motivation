@@ -1,5 +1,5 @@
 server:
-  port: 8084
+  port: 8089
   servlet:
     context-path: /self-motivation
 spring:
@@ -12,3 +12,16 @@ mybatis:
   type-aliases-package: com.yangq.selfmotivation.dao.po
   config-location: classpath:mybatis/mybatis-config.xml
   mapper-locations: classpath:/mapper/*.xml
+mapper:
+  mappers:
+    - tk.mybatis.mapper.common.Mapper
+  notEmpty: true
+search:
+  data:
+    elasticsearch:
+      cluster-name: elasticsearch
+      cluster-nodes: 47.98.152.163:9200
+      index:
+        number-of-replicas: 0
+        number-of-shards: 3
+

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yangq.selfmotivation.dao.mapper.CmsArticleMapper">
+  <resultMap id="BaseResultMap" type="com.yangq.selfmotivation.dao.po.CmsArticle">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="art_title" jdbcType="VARCHAR" property="artTitle" />
+    <result column="art_digest" jdbcType="VARCHAR" property="artDigest" />
+    <result column="art_from" jdbcType="VARCHAR" property="artFrom" />
+    <result column="art_author" jdbcType="VARCHAR" property="artAuthor" />
+    <result column="web_id" jdbcType="INTEGER" property="webId" />
+    <result column="cate_id" jdbcType="INTEGER" property="cateId" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="create_username" jdbcType="VARCHAR" property="createUsername" />
+    <result column="create_user_id" jdbcType="INTEGER" property="createUserId" />
+    <result column="publish_time" jdbcType="TIMESTAMP" property="publishTime" />
+    <result column="publish_username" jdbcType="VARCHAR" property="publishUsername" />
+    <result column="publish_user_id" jdbcType="VARCHAR" property="publishUserId" />
+    <result column="art_top" jdbcType="INTEGER" property="artTop" />
+    <result column="art_state" jdbcType="INTEGER" property="artState" />
+    <result column="show_start_time" jdbcType="TIMESTAMP" property="showStartTime" />
+    <result column="show_end_time" jdbcType="TIMESTAMP" property="showEndTime" />
+    <result column="open_commen" jdbcType="INTEGER" property="openCommen" />
+    <result column="colu_id" jdbcType="INTEGER" property="coluId" />
+    <result column="colu_name" jdbcType="VARCHAR" property="coluName" />
+    <result column="create_group_id" jdbcType="INTEGER" property="createGroupId" />
+    <result column="create_group_name" jdbcType="VARCHAR" property="createGroupName" />
+    <result column="art_content" jdbcType="LONGVARCHAR" property="artContent" />
+  </resultMap>
+</mapper>
