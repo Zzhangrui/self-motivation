@@ -20,7 +20,7 @@ search:
   data:
     elasticsearch:
       cluster-name: elasticsearch
-      cluster-nodes: 47.98.152.163:9200
+      cluster-nodes: localhost:9200
       index:
         number-of-replicas: 0
         number-of-shards: 3
