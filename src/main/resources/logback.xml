@@ -1,0 +1,41 @@
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
+    <property name="glmapper-name" value="glmapper-demo" />
+    <contextName>motivation</contextName>
+
+
+    <!-- 默认的控制台日志输出，一般生产环境都是后台启动，这个没太大作用 -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>%d{HH:mm:ss.SSS} %-5level %logger{80} - %msg%n</Pattern>
+        </encoder>
+    </appender>
+
+
+
+
+
+
+
+
+
+
+
+    <logger name="io.ebean.DDL" level="TRACE"/>
+
+    <logger name="io.ebean.SQL" level="TRACE"/>
+    <logger name="io.ebean.TXN" level="TRACE"/>
+    <logger name="io.ebean.SUM" level="TRACE"/>
+
+    <!-- L2 logging -->
+    <logger name="io.ebean.cache.QUERY" level="TRACE"/>
+    <logger name="io.ebean.cache.BEAN" level="TRACE"/>
+    <logger name="io.ebean.cache.COLL" level="TRACE"/>
+    <logger name="io.ebean.cache.NATKEY" level="TRACE"/>
+
+    <!-- Testing with Docker containers -->
+    <logger name="io.ebean.docker" level="TRACE"/>
+
+    <root level="info">
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>

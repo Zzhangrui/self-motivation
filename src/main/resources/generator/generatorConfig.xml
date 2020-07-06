@@ -33,7 +33,7 @@
                              targetProject="src/main/java"
                              type="XMLMAPPER"/>
 
-        <table tableName="cms_article">
+        <table tableName="cms_column">
             <generatedKey column="id" sqlStatement="JDBC"/>
         </table>
 

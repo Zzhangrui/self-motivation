@@ -1,0 +1,2 @@
+entity-packages: com.yangq.selfmotivation.dao.po
+transactional-packages: com.yangq.selfmotivation

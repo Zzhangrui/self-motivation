@@ -1,11 +1,17 @@
 package com.yangq.selfmotivation.controller;
 
 import com.yangq.selfmotivation.dao.po.CmsArticle;
+import com.yangq.selfmotivation.dao.po.CmsColumn;
+import com.yangq.selfmotivation.dao.po.query.QCmsColumn;
 import com.yangq.selfmotivation.service.ArticleService;
 import com.yangq.selfmotivation.vo.JsonResult;
+import io.ebean.DB;
+import io.ebean.annotation.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 /**
  * @author Zhangr
@@ -18,8 +24,10 @@ public class ArticleController {
     ArticleService articleService;
 
     @GetMapping("index")
+    @Transactional
     public JsonResult index() {
-        return articleService.queryByEs("2[3");
+        List<CmsColumn> cmsColumnList = new QCmsColumn().coluName.ilike("%检查%").findList();
+        return JsonResult.success(cmsColumnList);
     }
 
 

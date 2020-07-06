@@ -24,4 +24,15 @@ search:
       index:
         number-of-replicas: 0
         number-of-shards: 3
+ebean:
+  dbSchema: motivation  # use this schema rather than public
+  migration:
+    run: true       # run database migrations on startup
+
+datasource:
+  db:
+    driver-class-name:  com.mysql.jdbc.Driver
+    url: jdbc:mysql://47.98.152.163:3306/cms?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: 1qaz@WSX
 
