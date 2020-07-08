@@ -1,5 +1,6 @@
 package com.yangq.selfmotivation.controller;
 
+import com.sun.xml.internal.ws.api.FeatureListValidatorAnnotation;
 import com.yangq.selfmotivation.dao.po.CmsArticle;
 import com.yangq.selfmotivation.dao.po.CmsColumn;
 import com.yangq.selfmotivation.dao.po.query.QCmsColumn;
@@ -8,6 +9,7 @@ import com.yangq.selfmotivation.vo.JsonResult;
 import io.ebean.DB;
 import io.ebean.annotation.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,9 +25,13 @@ public class ArticleController {
     @Autowired
     ArticleService articleService;
 
+    @Value("${env-level}")
+    private String envLevel;
+
     @GetMapping("index")
     @Transactional
     public JsonResult index() {
+        System.out.println(envLevel);
         List<CmsColumn> cmsColumnList = new QCmsColumn().coluName.ilike("%检查%").findList();
         return JsonResult.success(cmsColumnList);
     }

@@ -1,8 +1,10 @@
 server:
-  port: 8089
+  port: 8078
   servlet:
     context-path: /self-motivation
 spring:
+  profiles:
+    active: ${profiles.active}
   datasource:
     driver-class-name:  com.mysql.jdbc.Driver
     url: jdbc:mysql://47.98.152.163:3306/cms?useUnicode=true&characterEncoding=utf8
@@ -35,4 +37,5 @@ datasource:
     url: jdbc:mysql://47.98.152.163:3306/cms?useUnicode=true&characterEncoding=utf8
     username: root
     password: 1qaz@WSX
+
 
