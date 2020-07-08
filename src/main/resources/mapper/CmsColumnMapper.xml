@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yangq.selfmotivation.dao.mapper.CmsColumnMapper">
+  <resultMap id="BaseResultMap" type="com.yangq.selfmotivation.dao.po.CmsColumn">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="colu_name" jdbcType="VARCHAR" property="coluName" />
+    <result column="colu_des" jdbcType="VARCHAR" property="coluDes" />
+    <result column="web_id" jdbcType="INTEGER" property="webId" />
+    <result column="parent_id" jdbcType="INTEGER" property="parentId" />
+    <result column="state" jdbcType="INTEGER" property="state" />
+    <result column="open_comment" jdbcType="INTEGER" property="openComment" />
+    <result column="position" jdbcType="VARCHAR" property="position" />
+    <result column="colu_type" jdbcType="VARCHAR" property="coluType" />
+    <result column="colu_level" jdbcType="INTEGER" property="coluLevel" />
+    <result column="colu_img_path" jdbcType="VARCHAR" property="coluImgPath" />
+    <result column="colu_img_name" jdbcType="VARCHAR" property="coluImgName" />
+    <result column="colu_default" jdbcType="INTEGER" property="coluDefault" />
+    <result column="share_in" jdbcType="INTEGER" property="shareIn" />
+    <result column="share_out" jdbcType="INTEGER" property="shareOut" />
+  </resultMap>
+</mapper>
