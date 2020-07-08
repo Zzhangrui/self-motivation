@@ -31,7 +31,6 @@ public class ArticleController {
     @GetMapping("index")
     @Transactional
     public JsonResult index() {
-        System.out.println(envLevel);
         List<CmsColumn> cmsColumnList = new QCmsColumn().coluName.ilike("%检查%").findList();
         return JsonResult.success(cmsColumnList);
     }
