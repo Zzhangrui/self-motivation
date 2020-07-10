@@ -4,6 +4,9 @@ import cn.hutool.core.bean.BeanUtil;
 import com.yangq.selfmotivation.contants.ElasticsearchConstant;
 import com.yangq.selfmotivation.dao.mapper.CmsArticleMapper;
 import com.yangq.selfmotivation.dao.po.CmsArticle;
+import com.yangq.selfmotivation.dao.po.CmsColumn;
+import com.yangq.selfmotivation.dao.po.query.QCmsArticle;
+import com.yangq.selfmotivation.dao.po.query.QCmsColumn;
 import com.yangq.selfmotivation.service.ArticleService;
 import com.yangq.selfmotivation.service.base.BaseElasticsearchService;
 import com.yangq.selfmotivation.vo.JsonResult;
@@ -39,6 +42,26 @@ public class ArticleServiceImpl extends BaseElasticsearchService implements Arti
     @Override
     public JsonResult queryArticleList() {
         return JsonResult.success(articleMapper.selectAll());
+    }
+
+    @Override
+    public CmsArticle queryArticleById(Integer id) {
+        if (null == id) {
+            id = 12;
+        }
+        return new QCmsArticle().id.equalTo(id).query().findOne();
+    }
+
+    /**
+     * 查询栏目
+     *
+     * @return
+     */
+    @Override
+    public CmsColumn queryColumnList() {
+        CmsColumn cmsColumn = new QCmsColumn().id.equalTo(1L).query().findOne();
+        return cmsColumn;
+
     }
 
     @Override

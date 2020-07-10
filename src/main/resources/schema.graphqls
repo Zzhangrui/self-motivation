@@ -1,0 +1,26 @@
+type Query {
+  # 获取文章
+  queryArticleList(offset: Int = 0, limit: Int = 10,idNumber: Int ): [Article]
+
+  #获取栏目
+  queryColumnList:[Column]
+}
+
+type Article{
+  #标题
+  artTitle: String
+  coluName: String
+  cmsColumn: Column
+}
+
+type Column{
+  coluName :String
+  articleList: [Article]
+}
+
+type JsonResult{
+  msg:String
+  code:String
+}
+
+
