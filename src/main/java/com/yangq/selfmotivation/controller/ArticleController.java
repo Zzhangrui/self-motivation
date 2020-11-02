@@ -9,6 +9,7 @@ import com.yangq.selfmotivation.vo.JsonResult;
 import io.ebean.annotation.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -24,6 +25,9 @@ public class ArticleController {
     @Autowired
     ArticleService articleService;
 
+    @Autowired
+    private RedisTemplate redisTemplate;
+
     @Value("${env-level}")
     private String envLevel;
 
@@ -31,7 +35,8 @@ public class ArticleController {
     public JsonResult index() {
         //List<CmsColumn> cmsColumnList = new QCmsColumn().coluName.ilike("%检查%").findList();
         //System.out.println(JSONUtil.toJsonStr(new QCmsArticle().id.equalTo(12).query().findOne()));
-        return JsonResult.success(articleService.queryColumnList());
+        redisTemplate.opsForValue().set("test","包包是傻逼");
+        return JsonResult.success(redisTemplate.opsForValue().get("test"));
     }
 
     @GetMapping("columnList")
@@ -62,4 +67,6 @@ public class ArticleController {
         cmsArticle.setArtDigest("张锐");
         return articleService.insert(cmsArticle);
     }
+
+
 }
